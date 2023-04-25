@@ -1,0 +1,63 @@
+/* roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/* cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Roboto:wght@100&display=swap');
+/* open sans */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Open+Sans:ital,wght@1,600&family=Roboto:wght@100&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: #0d0808;
+  overflow: hidden;
+  display: flex;
+}
+.container{
+  width: 350px;
+  height: 100vh;
+  /* border: 1px solid #000; */
+  overflow: hidden;
+  position: relative;
+  animation: move 5s linear infinite;
+  animation-direction: alternate;
+}
+.container img{
+  width: 350px;
+  height: 150px;
+  display: block;
+}
+.container i{
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: cornflowerblue;
+  position: absolute;
+  top: 100px;
+  transform: translateY(0) rotate(45deg);
+  border-radius: 0px 50px 50px 50px;
+  animation: rain 5s linear infinite;
+  z-index: -1;
+}
+@keyframes rain{
+  0%{
+    transform: translateY(0px) rotate(45deg);
+  }
+  100%{
+    transform: translateY(calc(100vh + 110px)) rotate(45deg);
+  }
+}
+
+@keyframes move{
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(calc(100% + 350px));
+  }
+}
